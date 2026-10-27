@@ -1,0 +1,23 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+
+# Data (the README will explain how to download it)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
