@@ -1,0 +1,221 @@
+﻿
+======================================================================
+1. FILE AND SHAPE
+======================================================================
+file: WA_Fn-UseC_-Telco-Customer-Churn.csv
+rows: 7,043 | columns: 21
+columns: customerID, gender, SeniorCitizen, Partner, Dependents, tenure, PhoneService, MultipleLines, InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod, MonthlyCharges, TotalCharges, Churn
+
+======================================================================
+2. COLUMN PROFILE (all values read as text)
+======================================================================
+          column  unique  blank  padded  all_non_blank_numeric
+      customerID    7043      0       0                  False
+          gender       2      0       0                  False
+   SeniorCitizen       2      0       0                   True
+         Partner       2      0       0                  False
+      Dependents       2      0       0                  False
+          tenure      73      0       0                   True
+    PhoneService       2      0       0                  False
+   MultipleLines       3      0       0                  False
+ InternetService       3      0       0                  False
+  OnlineSecurity       3      0       0                  False
+    OnlineBackup       3      0       0                  False
+DeviceProtection       3      0       0                  False
+     TechSupport       3      0       0                  False
+     StreamingTV       3      0       0                  False
+ StreamingMovies       3      0       0                  False
+        Contract       3      0       0                  False
+PaperlessBilling       2      0       0                  False
+   PaymentMethod       4      0       0                  False
+  MonthlyCharges    1585      0       0                   True
+    TotalCharges    6531     11      11                   True
+           Churn       2      0       0                  False
+(blank = empty or spaces only; padded = leading or trailing spaces)
+
+======================================================================
+3. FIRST 5 ROWS
+======================================================================
+customerID gender SeniorCitizen Partner Dependents tenure PhoneService    MultipleLines InternetService OnlineSecurity OnlineBackup DeviceProtection TechSupport StreamingTV StreamingMovies       Contract PaperlessBilling             PaymentMethod MonthlyCharges TotalCharges Churn
+7590-VHVEG Female             0     Yes         No      1           No No phone service             DSL             No          Yes               No          No          No              No Month-to-month              Yes          Electronic check          29.85        29.85    No
+5575-GNVDE   Male             0      No         No     34          Yes               No             DSL            Yes           No              Yes          No          No              No       One year               No              Mailed check          56.95       1889.5    No
+3668-QPYBK   Male             0      No         No      2          Yes               No             DSL            Yes          Yes               No          No          No              No Month-to-month              Yes              Mailed check          53.85       108.15   Yes
+7795-CFOCW   Male             0      No         No     45           No No phone service             DSL            Yes           No              Yes         Yes          No              No       One year               No Bank transfer (automatic)           42.3      1840.75    No
+9237-HQITU Female             0      No         No      2          Yes               No     Fiber optic             No           No               No          No          No              No Month-to-month              Yes          Electronic check           70.7       151.65   Yes
+
+======================================================================
+4. DUPLICATES
+======================================================================
+fully duplicated rows: 0
+duplicate customerID values: 0
+
+======================================================================
+5. VALUES OF LOW-CARDINALITY COLUMNS (10 or fewer distinct values)
+======================================================================
+
+gender:
+gender
+Male      3555
+Female    3488
+
+SeniorCitizen:
+SeniorCitizen
+0    5901
+1    1142
+
+Partner:
+Partner
+No     3641
+Yes    3402
+
+Dependents:
+Dependents
+No     4933
+Yes    2110
+
+PhoneService:
+PhoneService
+Yes    6361
+No      682
+
+MultipleLines:
+MultipleLines
+No                  3390
+Yes                 2971
+No phone service     682
+
+InternetService:
+InternetService
+Fiber optic    3096
+DSL            2421
+No             1526
+
+OnlineSecurity:
+OnlineSecurity
+No                     3498
+Yes                    2019
+No internet service    1526
+
+OnlineBackup:
+OnlineBackup
+No                     3088
+Yes                    2429
+No internet service    1526
+
+DeviceProtection:
+DeviceProtection
+No                     3095
+Yes                    2422
+No internet service    1526
+
+TechSupport:
+TechSupport
+No                     3473
+Yes                    2044
+No internet service    1526
+
+StreamingTV:
+StreamingTV
+No                     2810
+Yes                    2707
+No internet service    1526
+
+StreamingMovies:
+StreamingMovies
+No                     2785
+Yes                    2732
+No internet service    1526
+
+Contract:
+Contract
+Month-to-month    3875
+Two year          1695
+One year          1473
+
+PaperlessBilling:
+PaperlessBilling
+Yes    4171
+No     2872
+
+PaymentMethod:
+PaymentMethod
+Electronic check             2365
+Mailed check                 1612
+Bank transfer (automatic)    1544
+Credit card (automatic)      1522
+
+Churn:
+Churn
+No     5174
+Yes    1869
+
+======================================================================
+6. NUMERIC-LOOKING COLUMNS WITH MORE THAN 10 DISTINCT VALUES
+======================================================================
+
+tenure:
+count    7043.000000
+mean       32.371149
+std        24.559481
+min         0.000000
+25%         9.000000
+50%        29.000000
+75%        55.000000
+max        72.000000
+
+MonthlyCharges:
+count    7043.000000
+mean       64.761692
+std        30.090047
+min        18.250000
+25%        35.500000
+50%        70.350000
+75%        89.850000
+max       118.750000
+
+TotalCharges:
+count    7032.000000
+mean     2283.300441
+std      2266.771362
+min        18.800000
+25%       401.450000
+50%      1397.475000
+75%      3794.737500
+max      8684.800000
+
+======================================================================
+7. TARGET: Churn
+======================================================================
+Churn
+No     5174
+Yes    1869
+Churn
+No     73.46%
+Yes    26.54%
+
+======================================================================
+8. TotalCharges CHECKS
+======================================================================
+rows with missing or non-numeric TotalCharges: 11
+     tenure MonthlyCharges TotalCharges
+488       0          52.55             
+753       0          20.25             
+936       0          80.85             
+1082      0          25.75             
+1340      0          56.05             
+3331      0          19.85             
+3826      0          25.35             
+4380      0             20             
+5218      0           19.7             
+6670      0          73.35             
+6754      0           61.9             
+
+relative difference |TotalCharges - tenure*MonthlyCharges| / (tenure*MonthlyCharges):
+count    7032.000000
+mean        0.032017
+std         0.039900
+min         0.000000
+50%         0.019997
+90%         0.075162
+99%         0.187996
+max         0.573454
