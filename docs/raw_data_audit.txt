@@ -34,14 +34,9 @@ PaperlessBilling       2      0       0                  False
 (blank = empty or spaces only; padded = leading or trailing spaces)
 
 ======================================================================
-3. FIRST 5 ROWS
+3. FIRST ROWS
 ======================================================================
-customerID gender SeniorCitizen Partner Dependents tenure PhoneService    MultipleLines InternetService OnlineSecurity OnlineBackup DeviceProtection TechSupport StreamingTV StreamingMovies       Contract PaperlessBilling             PaymentMethod MonthlyCharges TotalCharges Churn
-7590-VHVEG Female             0     Yes         No      1           No No phone service             DSL             No          Yes               No          No          No              No Month-to-month              Yes          Electronic check          29.85        29.85    No
-5575-GNVDE   Male             0      No         No     34          Yes               No             DSL            Yes           No              Yes          No          No              No       One year               No              Mailed check          56.95       1889.5    No
-3668-QPYBK   Male             0      No         No      2          Yes               No             DSL            Yes          Yes               No          No          No              No Month-to-month              Yes              Mailed check          53.85       108.15   Yes
-7795-CFOCW   Male             0      No         No     45           No No phone service             DSL            Yes           No              Yes         Yes          No              No       One year               No Bank transfer (automatic)           42.3      1840.75    No
-9237-HQITU Female             0      No         No      2          Yes               No     Fiber optic             No           No               No          No          No              No Month-to-month              Yes          Electronic check           70.7       151.65   Yes
+not printed: the dataset's license is unclear, so this report contains only aggregate statistics
 
 ======================================================================
 4. DUPLICATES
@@ -197,18 +192,8 @@ Yes    26.54%
 8. TotalCharges CHECKS
 ======================================================================
 rows with missing or non-numeric TotalCharges: 11
-     tenure MonthlyCharges TotalCharges
-488       0          52.55             
-753       0          20.25             
-936       0          80.85             
-1082      0          25.75             
-1340      0          56.05             
-3331      0          19.85             
-3826      0          25.35             
-4380      0             20             
-5218      0           19.7             
-6670      0          73.35             
-6754      0           61.9             
+tenure values among those rows: [0]
+raw TotalCharges values among those rows: [' ']
 
 relative difference |TotalCharges - tenure*MonthlyCharges| / (tenure*MonthlyCharges):
 count    7032.000000

@@ -56,8 +56,8 @@ def main() -> None:
     print(pd.DataFrame(profile).to_string(index=False))
     print("(blank = empty or spaces only; padded = leading or trailing spaces)")
 
-    section("3. FIRST 5 ROWS")
-    print(df.head().to_string(index=False))
+    section("3. FIRST ROWS")
+    print("not printed: the dataset's license is unclear, so this report contains only aggregate statistics")
 
     section("4. DUPLICATES")
     print(f"fully duplicated rows: {int(df.duplicated().sum()):,}")
@@ -95,7 +95,8 @@ def main() -> None:
         missing_total = total.isna()
         print(f"rows with missing or non-numeric TotalCharges: {int(missing_total.sum())}")
         if missing_total.any():
-            print(df.loc[missing_total, ["tenure", "MonthlyCharges", "TotalCharges"]].head(15).to_string())
+            print("tenure values among those rows:", sorted(tenure[missing_total].unique().tolist()))
+            print("raw TotalCharges values among those rows:", sorted(df.loc[missing_total, "TotalCharges"].unique().tolist()))
         expected = tenure * monthly
         ok = total.notna() & (expected > 0)
         rel = (total[ok] - expected[ok]).abs() / expected[ok]
