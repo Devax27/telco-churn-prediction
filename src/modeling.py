@@ -8,6 +8,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.ensemble import HistGradientBoostingClassifier, RandomForestClassifier
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_PATH = ROOT / "data" / "processed" / "telco_clean.parquet"
@@ -63,3 +64,64 @@ def build_logistic_pipeline(C: float = 1.0) -> Pipeline:
     return Pipeline(
         [("prep", build_preprocessor()), ("model", LogisticRegression(C=C, max_iter=1000))]
     )
+
+
+def build_tree_preprocessor() -> ColumnTransformer:
+    """One-hot encode categorical columns for tree models. Output is forced dense, because
+    HistGradientBoostingClassifier does not accept sparse input. Trees do not need scaling."""
+    return ColumnTransformer(
+        [
+            ("num", "passthrough", NUMERIC_FEATURES),
+            ("cat", OneHotEncoder(handle_unknown="ignore", sparse_output=False), CATEGORICAL_FEATURES),
+        ],
+        sparse_threshold=0,
+    )
+
+
+def build_forest_pipeline() -> Pipeline:
+    return Pipeline(
+        [
+            ("prep", build_tree_preprocessor()),
+            (
+                "model",
+                RandomForestClassifier(
+                    n_estimators=300, min_samples_leaf=5, max_features="sqrt", random_state=RANDOM_STATE
+                ),
+            ),
+        ]
+    )
+
+
+def build_hgb_pipeline() -> Pipeline:
+    """Gradient boosting with shallow trees and early stopping on an internal validation split
+    (taken from the training part of each fold only, so nothing leaks from the held-out fold)."""
+    return Pipeline(
+        [
+            ("prep", build_tree_preprocessor()),
+            (
+                "model",
+                HistGradientBoostingClassifier(
+                    learning_rate=0.05,
+                    max_iter=300,
+                    max_depth=3,
+                    min_samples_leaf=20,
+                    l2_regularization=1.0,
+                    early_stopping=True,
+                    validation_fraction=0.15,
+                    n_iter_no_change=20,
+                    random_state=RANDOM_STATE,
+                ),
+            ),
+        ]
+    )
+
+
+def candidate_models() -> dict:
+    """The models compared in src/train_compare.py. Returns fresh, unfitted pipelines."""
+    return {
+        "logistic regression (C=0.1)": build_logistic_pipeline(C=0.1),
+        "logistic regression (C=1.0)": build_logistic_pipeline(C=1.0),
+        "logistic regression (C=10)": build_logistic_pipeline(C=10.0),
+        "random forest": build_forest_pipeline(),
+        "gradient boosting": build_hgb_pipeline(),
+    }
