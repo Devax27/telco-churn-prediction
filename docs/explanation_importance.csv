@@ -1,0 +1,25 @@
+group,n_columns,mean_drop,std_across_folds,min_fold,max_fold
+tenure,1,0.25373,0.03058,0.23235,0.30517
+[joint] internet service + 6 add-ons,7,0.22501,0.03476,0.17856,0.27453
+[joint] tenure + monthly + total charges,3,0.17074,0.03005,0.1239,0.20697
+internet_service,1,0.09817,0.0209,0.07243,0.12924
+contract,1,0.05352,0.007,0.04276,0.06131
+monthly_charges,1,0.04695,0.01698,0.03091,0.0731
+total_charges,1,0.04387,0.01531,0.02823,0.06511
+[joint] paperless billing + payment method,2,0.0287,0.00653,0.02067,0.03679
+[joint] phone service + multiple lines,2,0.01709,0.00915,0.0031,0.02503
+multiple_lines,1,0.01702,0.00837,0.00717,0.02968
+streaming_tv,1,0.01482,0.01013,0.00476,0.02604
+streaming_movies,1,0.01442,0.01241,0.00039,0.02799
+online_security,1,0.01135,0.00444,0.00503,0.01541
+payment_method,1,0.01127,0.00385,0.00719,0.01756
+paperless_billing,1,0.01092,0.00357,0.00672,0.01604
+tech_support,1,0.00889,0.00501,0.00396,0.01585
+[joint] demographics,4,0.00742,0.00348,0.00348,0.01147
+dependents,1,0.00532,0.00359,0.00169,0.01035
+online_backup,1,0.00276,0.00244,-0.00041,0.00563
+device_protection,1,0.00233,0.00139,0.00054,0.00386
+senior_citizen,1,0.00084,0.0016,-0.00081,0.00332
+gender,1,0.00023,0.001,-0.00107,0.00174
+phone_service,1,0.00019,0.00034,-0.00029,0.00064
+partner,1,-0.00036,0.00064,-0.00121,0.00013

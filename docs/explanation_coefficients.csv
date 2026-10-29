@@ -1,0 +1,46 @@
+feature,coefficient,odds_ratio
+num__tenure,-1.25754,0.28435
+cat__contract_Two year,-0.77659,0.45997
+cat__internet_service_DSL,-0.64865,0.52275
+cat__internet_service_Fiber optic,0.6342,1.8855
+num__monthly_charges,-0.59186,0.5533
+cat__contract_Month-to-month,0.58288,1.79119
+num__total_charges,0.53625,1.70959
+cat__paperless_billing_No,-0.34323,0.70948
+cat__streaming_tv_No internet service,-0.3001,0.74074
+cat__device_protection_No internet service,-0.3001,0.74074
+cat__tech_support_No internet service,-0.3001,0.74074
+cat__online_security_No internet service,-0.3001,0.74074
+cat__streaming_movies_No internet service,-0.3001,0.74074
+cat__online_backup_No internet service,-0.3001,0.74074
+cat__internet_service_No,-0.3001,0.74074
+cat__multiple_lines_No,-0.27939,0.75624
+cat__dependents_Yes,-0.26849,0.76454
+cat__streaming_movies_No,-0.21539,0.80623
+cat__streaming_tv_No,-0.21493,0.8066
+cat__payment_method_Credit card (automatic),-0.21425,0.80715
+cat__streaming_movies_Yes,0.20094,1.22255
+cat__streaming_tv_Yes,0.20048,1.22199
+cat__payment_method_Electronic check,0.19787,1.2188
+cat__payment_method_Bank transfer (automatic),-0.18614,0.83016
+cat__phone_service_Yes,-0.17475,0.83967
+cat__online_security_Yes,-0.17073,0.84305
+cat__gender_Female,-0.16813,0.84524
+cat__partner_No,-0.16742,0.84584
+cat__online_security_No,0.15628,1.16915
+cat__partner_Yes,-0.14713,0.86318
+cat__gender_Male,-0.14642,0.86379
+cat__tech_support_Yes,-0.14595,0.8642
+cat__phone_service_No,-0.13981,0.86952
+cat__multiple_lines_No phone service,-0.13981,0.86952
+cat__tech_support_No,0.1315,1.14054
+cat__contract_One year,-0.12084,0.88617
+cat__payment_method_Mailed check,-0.11204,0.89401
+cat__multiple_lines_Yes,0.10465,1.11032
+num__senior_citizen,0.05345,1.0549
+cat__online_backup_Yes,-0.0479,0.95322
+cat__dependents_No,-0.04607,0.95498
+cat__device_protection_No,-0.03643,0.96422
+cat__online_backup_No,0.03345,1.03402
+cat__paperless_billing_Yes,0.02867,1.02909
+cat__device_protection_Yes,0.02198,1.02223
