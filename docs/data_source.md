@@ -13,6 +13,11 @@
 - The company and customers are fictional, so results illustrate a method and say nothing about real customers.
 - The saved model files in models/ are not committed either, for the same reason.
 
-## Open decision
 
-Whether to publish a model trained on this data (needed for a public demo app). To be decided before deployment, after reading IBM's terms for the sample data.
+## Decision on publishing the model (2026-10-30)
+
+Forum posts report that IBM's own page for the dataset states no license, and none of the threads I found
+contains an authoritative answer. A model trained on the data is a derived artifact of unclear status, so
+the saved model is **not** committed and there is **no public hosted demo**. The demo runs locally
+(`streamlit run app.py`) after the reader downloads the dataset and runs `python src\train_final.py`.
+The README shows screenshots of the local demo. This can be revisited if the licensing is clarified.

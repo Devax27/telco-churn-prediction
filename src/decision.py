@@ -85,3 +85,14 @@ def out_of_fold_proba(pipeline, X, y, n_splits: int = 5, n_repeats: int = 3, ran
         cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=random_state + r)
         total += cross_val_predict(pipeline, X, y, cv=cv, method="predict_proba")[:, 1]
     return total / n_repeats
+
+
+def expected_net_benefit(probability: float, offer_cost: float, value_saved: float,
+                         success_rate: float) -> float:
+    """Expected net benefit of contacting ONE customer whose churn probability is `probability`.
+
+    Positive exactly when the probability exceeds optimal_threshold(...)."""
+    _validate_costs(offer_cost, value_saved, success_rate)
+    if not 0.0 <= probability <= 1.0:
+        raise ValueError("probability must be between 0 and 1")
+    return success_rate * value_saved * probability - offer_cost
