@@ -38,7 +38,7 @@ Gradient boosting scored 0.664, a gain of only 0.003, below the 0.01 cutoff I ha
 All are associations in a fictional dataset, not causes.
 
 - **Contract:** month-to-month customers churned at 42.7%, one-year at 11.3%, two-year at 2.8%.
-- **Internet service:** fiber 41.9%, DSL 19.0%, none 7.4%. Customers with online security (14.6%) or tech support (15.2%) churned far less than those without (41.8% and 41.6%).
+- **Internet service:** fiber 41.9%, DSL 19.0%, none 7.4%. Among customers with internet service, those with online security (14.6%) or tech support (15.2%) churned far less than those without (41.8% and 41.6%).
 - **Payment:** electronic check 45.3%, versus 15.2% to 19.1% for the other methods.
 - **Tenure:** 53.3% churn in the first 6 months versus 9.5% after 49 months. In a one-time snapshot, tenure partly encodes who left, so this may look stronger here than it would when scoring live customers.
 - **What the model relies on** (drop in PR-AUC when inputs are shuffled in related groups, cross-validated): the internet-service block (0.225), tenure with charges (0.171) and contract (0.054). Gender carried essentially no signal (0.0002). This is not a fairness audit.

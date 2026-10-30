@@ -21,7 +21,7 @@ In scenarios C and D, contacting everyone loses money, while a targeted list sti
 
 ## 2. How to prioritise when capacity is limited
 
-Probabilities were well calibrated on the test set. Observed churn by fifth of predicted risk (lowest to highest): 1.4% (4 of 282), 7.4% (21 of 282), 20.3% (57 of 282), 37.6% (106 of 282), 66.0% (186 of 282). Work down from the highest-risk customers, using the probability as the ordering.
+Probabilities were well calibrated on the test set. Observed churn by fifth of predicted risk (lowest to highest): 1.4% (4 of 282), 7.4% (21 of 282), 20.3% (57 of 281), 37.6% (106 of 282), 66.0% (186 of 282). Work down from the highest-risk customers, using the probability as the ordering.
 
 ## 3. What is associated with churn (ideas to test)
 
