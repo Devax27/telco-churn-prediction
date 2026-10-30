@@ -11,6 +11,7 @@
 - The raw CSV and all processed data files are **not committed** (`data/raw/*` and `data/processed/*` are git-ignored). The README tells readers to download the file from Kaggle themselves.
 - Documents and the README contain only aggregate statistics (counts, rates, charts), not rows of customer data.
 - The company and customers are fictional, so results illustrate a method and say nothing about real customers.
+- The saved model files in models/ are not committed either, for the same reason.
 
 ## Open decision
 

@@ -21,3 +21,7 @@ data/processed/*
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Model files (publishing a model trained on this data is an open decision: see docs/data_source.md)
+models/*
+!models/.gitkeep
